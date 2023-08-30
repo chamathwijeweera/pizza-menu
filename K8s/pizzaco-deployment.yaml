@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pizzaco-deployment
+  namespace: ch-react-apps
+spec:
+  selector:
+    matchLabels:
+      app: pizzaco
+  template:
+    metadata:
+      labels:
+        app: pizzaco
+    spec:
+      containers:
+        - name: pizzaco
+          image: chamathwijeweera/pizzamenu
+          ports:
+            - containerPort: 80
